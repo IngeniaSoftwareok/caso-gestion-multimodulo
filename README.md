@@ -1,61 +1,53 @@
 # Gestión Multimódulo
 
-Un producto de gestión empresarial con módulos conectados y separación de datos por empresa.
+Gestión de ventas, compras, caja y stock en una aplicación organizada por módulos.
 
 | Proyecto | Detalle |
 |---|---|
 | Tipo | Producto propio en desarrollo |
-| Estado | Beta cerrada. Sin adopción comercial anunciada. |
+| Estado | Beta cerrada |
 | Tecnologías | Java · JavaFX · Spring Boot · MySQL |
 | Desarrollo | Agustin Crudo · Ingenia Software |
-| Código de la aplicación | Privado; este repositorio presenta el caso |
+| Código de la aplicación | Privado |
 
-![Listado de ventas de Gestión Multimódulo con datos de demostración](assets/01-ventas.webp)
+![Listado de ventas de Gestión Multimódulo](assets/01-ventas.webp)
 
-**Material visual de demostración.** Las cifras de las pantallas no son resultados comerciales.
-
-## Recorrido visual
-
-[![Abrir el recorrido visual](assets/poster.webp)](assets/recorrido.mp4)
-
-[Ver o descargar el video MP4 · 33 s](assets/recorrido.mp4) · [Descripción del recorrido](docs/recorrido.md) · [Rótulos descriptivos VTT](assets/recorrido.es.vtt)
-
-El montaje muestra catálogo, clientes, ventas, detalle de compra y existencias. Son consultas y navegación con datos ficticios; no demuestra una venta nueva que actualice stock y caja. Las tomas pertenecen a versiones de demostración diferentes.
+Las capturas y el video usan datos de ejemplo.
 
 ## El problema
 
-Las operaciones de catálogo, clientes, ventas, compras, caja y stock están relacionadas. El producto busca organizarlas mediante módulos y accesos definidos por empresa, sin perder coherencia entre las operaciones.
+Una venta afecta el stock, el saldo del cliente y la caja. Las compras también modifican las existencias y las cuentas con proveedores. Quise reunir esas operaciones en un producto que mantuviera la información conectada y pudiera adaptarse a distintas empresas.
 
-## La solución
+## Qué desarrollé
 
-- Cliente de escritorio que consume un backend central.
-- Módulos comerciales habilitados según empresa y permisos: catálogo, clientes, proveedores, ventas, compras, caja, stock y reportes, entre otros.
-- Controles de separación de datos y tratamiento de reintentos para evitar duplicar operaciones.
+- Módulos de catálogo, clientes, proveedores, ventas, compras, caja, stock y reportes.
+- Datos, permisos y módulos habilitados por empresa.
+- Aplicación de escritorio conectada a un backend central.
+- Identificación de solicitudes para evitar operaciones duplicadas cuando se reintenta un envío.
 
-## Mi participación
+## Mi trabajo
 
-Desarrollo del producto y dirección de su evolución mediante un proceso mixto de programación y herramientas de IA. El caso se centra en cómo se conectan las operaciones de gestión y qué decisiones sostienen el comportamiento del sistema.
+Desarrollo el producto y defino cómo se relacionan sus módulos. Me ocupo de los flujos comerciales, la separación de datos por empresa y las mejoras de la aplicación.
 
-## Resultado y estado
+## Desarrollo del producto
 
-Se construyó una plataforma con módulos operativos y ensayos locales/LAN documentados. El proyecto permanece en beta cerrada según el último estado confirmado.
+Integré los módulos principales sobre un backend común y probé su funcionamiento de forma local y en red LAN. Sigo trabajando en el producto y ajustando los flujos de gestión.
 
-## Decisiones y alcance
+## Video
 
-- [Arquitectura simplificada](docs/arquitectura.md)
-- [Decisiones técnicas seleccionadas](docs/decisiones-tecnicas.md)
-- [Qué demuestra el material y qué queda fuera](docs/alcance-evidencia.md)
+[![Reproducir el video](assets/poster.webp)](assets/recorrido.mp4)
 
-<details>
-<summary>Más capturas del proyecto</summary>
+[Ver o descargar el video MP4 · 33 s](assets/recorrido.mp4)
+
+## Más capturas
 
 **Catálogo**
 
 ![Catálogo](assets/02-catalogo.webp)
 
-**Ficha de cliente ficticio**
+**Ficha de cliente**
 
-![Ficha de cliente ficticio](assets/03-cliente.webp)
+![Ficha de cliente](assets/03-cliente.webp)
 
 **Detalle de compra**
 
@@ -65,12 +57,11 @@ Se construyó una plataforma con módulos operativos y ensayos locales/LAN docum
 
 ![Existencias](assets/05-stock.webp)
 
-</details>
+## Documentación técnica
 
-## Disponibilidad del código
-
-Este repositorio contiene documentación y material audiovisual del caso. El código fuente de la aplicación se mantiene privado. Los diagramas son explicaciones simplificadas, no instrucciones de despliegue ni una distribución del sistema.
+- [Arquitectura](docs/arquitectura.md)
+- [Decisiones técnicas](docs/decisiones-tecnicas.md)
 
 ## Contacto
 
-[Agustin Crudo · Ingenia Software](https://github.com/IngeniaSoftwareok) · [Portfolio](https://ingeniasoftwareok.github.io/portfolio/) · [Web profesional](https://ingenia-software.com.ar/) · [Email](mailto:ingeniasoftwareok@gmail.com)
+[Portfolio](https://ingeniasoftwareok.github.io/portfolio/) · [Ingenia Software](https://ingenia-software.com.ar/) · [Email](mailto:ingeniasoftwareok@gmail.com)

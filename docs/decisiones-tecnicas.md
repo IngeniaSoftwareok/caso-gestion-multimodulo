@@ -1,17 +1,17 @@
-# Decisiones seleccionadas
+# Decisiones técnicas
 
-## Mantener el contexto de empresa
+## Validar la empresa en el backend
 
-Los datos y permisos de una operación deben corresponder a la empresa de la sesión. La separación multiempresa es una responsabilidad del backend, no sólo de los filtros visuales del cliente.
+La separación de datos se aplica en el servidor. Cada consulta y operación toma la empresa de la sesión y valida los permisos del usuario, además de los filtros que se muestran en la interfaz.
 
-## Evitar duplicaciones por reintentos
+## Identificar los reintentos
 
-Una respuesta perdida no debe implicar registrar dos veces la misma solicitud. La implementación revisada incluye reservas y comprobaciones de idempotencia por empresa y clave. El recorrido visual incluido no reemplaza una prueba específica de este comportamiento.
+Si se pierde una respuesta, el cliente puede volver a enviar la solicitud. Incorporé una clave de idempotencia por empresa para reconocer ese reintento y evitar registrar la operación dos veces.
 
-## Conectar módulos sin anunciar una oferta ilimitada
+## Compartir servicios entre módulos
 
-Los módulos tienen dependencias y habilitación por empresa. Mostrar varias pantallas no implica que todo módulo esté habilitado en cualquier instalación o plan.
+Catálogo, clientes, ventas, compras, caja y stock utilizan una base común. Esta organización me permite mantener reglas compartidas y ampliar el producto sin resolver cada módulo como una aplicación separada.
 
-## Distinguir la beta de la aceptación externa
+## Habilitar módulos por empresa
 
-Existen ensayos locales y LAN. La entrega productiva, las condiciones comerciales y la adopción por empresas son cuestiones distintas. El producto se presenta como beta cerrada y gestión interna; no como facturación fiscal electrónica.
+La configuración define qué módulos utiliza cada empresa y qué permisos tiene cada usuario. Las dependencias entre módulos se mantienen dentro del producto.
